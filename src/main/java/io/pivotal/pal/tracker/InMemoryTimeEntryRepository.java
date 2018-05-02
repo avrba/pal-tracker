@@ -24,13 +24,13 @@ public class InMemoryTimeEntryRepository implements TimeEntryRepository {
         return new ArrayList(data.values());
     }
 
-    public TimeEntry update(long id, TimeEntry timeEntry) {
+    public TimeEntry update(Long id, TimeEntry timeEntry) {
         TimeEntry retVal=new TimeEntry(id,timeEntry.getProjectId(),timeEntry.getUserId(),timeEntry.getDate(),timeEntry.getHours());
         data.replace(id,retVal);
         return retVal;
     }
 
-    public void delete(long id) {
+    public void delete(Long id) {
         data.remove(id);
     }
 }
